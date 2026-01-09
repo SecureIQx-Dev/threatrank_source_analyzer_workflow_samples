@@ -12,7 +12,7 @@ jobs:
   vulnerability-scan:
     permissions:
       contents: read
-    uses: SecureIQx-Dev/threatrank_source_analyzer/.github/workflows/vulnerability-analyzer.yml@main
+    uses: ./vulnerability-analyzer.yml@main # CRITICAL: Replace this with the link to the private workflow you have setup
     
     with:
       repo_path: "."  # Path to scan, configurable
