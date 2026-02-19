@@ -5,14 +5,12 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-  schedule:
-    - cron: '0 0 */2 * *' # This line allows you to automatically repeat the job every 2 days
 
 jobs:
   vulnerability-scan:
     permissions:
       contents: read
-    uses: ./vulnerability-analyzer.yml@main # CRITICAL: Replace this with the link to the private workflow you have setup
+    uses: SecureIQx-Dev/threatrank_source_analyzer/.github/workflows/vulnerability-analyzer.yml@main
     
     with:
       repo_path: "."  # Path to scan, configurable
